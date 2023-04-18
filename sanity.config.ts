@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
+import { schemaTypes } from "./sanity/schemas";
 
 const config = defineConfig({
   title: "Next Magazine Studio",
@@ -11,6 +12,9 @@ const config = defineConfig({
   basePath: "/admin",
   // deskTool is needed to view Sanity Studio
   plugins: [deskTool()],
+  schema: {
+    types: schemaTypes,
+  },
 });
 
 export default config;
