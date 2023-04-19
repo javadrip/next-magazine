@@ -1,10 +1,15 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { getProjects } from "@/sanity/sanity-utils";
 
-const inter = Inter({ subsets: ['latin'] })
+export default async function Home() {
+  const projects = await getProjects();
 
-export default function Home() {
   return (
-
-  )
+    <div>
+      {projects.map(project => (
+        <div key={project.id}>
+          {project.name} ID: {project._id}
+        </div>
+      ))}
+    </div>
+  );
 }
