@@ -70,8 +70,7 @@ export async function getPage(slug: string): Promise<Page> {
       title,
       "slug": slug.current,
       content
-    },
+    }`,
     { slug }
-    `
   );
 }
