@@ -3,16 +3,12 @@
 
 import { Project } from "@/types/Project";
 import { createClient, groq } from "next-sanity";
+import clientConfig from "./config/client-config";
 
 // Typing getProjects here ensures that everywhere that uses getProjects will get typed appropriately
 export async function getProjects(): Promise<Project[]> {
-  const client = createClient({
-    projectId: "p8qypvm2",
-    dataset: "production",
-    apiVersion: "2023-04-18",
-  });
-
-  return client.fetch(
+  // clientConfig is imported from sanity/config/client-config.ts
+  return createClient(clientConfig).fetch(
     // * grabs everything in the dataset
     // [] filters down the data
     // {} specifies the projection aka the data we want to see
@@ -29,13 +25,8 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 export async function getProject(slug: string): Promise<Project> {
-  const client = createClient({
-    projectId: "p8qypvm2",
-    dataset: "production",
-    apiVersion: "2023-04-18",
-  });
-
-  return client.fetch(
+  // clientConfig is imported from sanity/config/client-config.ts
+  return createClient(clientConfig).fetch(
     // * grabs everything in the dataset
     // [] filters down the data
     // {} specifies the projection aka the data we want to see
