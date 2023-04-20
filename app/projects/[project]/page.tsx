@@ -12,11 +12,5 @@ export default async function Project({ params }: Props) {
   // Type of getProject is defined in sanity-utils.ts
   const project = await getProject(slug);
 
-  console.log(params);
-
-  return (
-    <div>
-      {project.name} | {params.project}
-    </div>
-  );
+  return <div>{project.name}</div>;
 }

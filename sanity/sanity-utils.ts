@@ -50,6 +50,7 @@ export async function getProject(slug: string): Promise<Project> {
       content
     }`,
     // Short hand for { slug: slug }
+    // slug value is taken from the getProject parameter slug
     { slug }
   );
 }
