@@ -3,5 +3,13 @@ import category from "./category";
 import post from "./post";
 import author from "./author";
 import project from "./project-schema";
+import page from "./page-schema";
 
-export const schemaTypes = [post, author, category, blockContent, project];
+export const schemaTypes = [
+  post,
+  author,
+  category,
+  blockContent,
+  project,
+  page,
+];
