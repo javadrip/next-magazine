@@ -6,8 +6,8 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
-      name: "name",
-      title: "Name",
+      name: "username",
+      title: "Username",
       type: "string",
     }),
     defineField({
@@ -15,13 +15,13 @@ export default defineType({
       title: "Slug",
       type: "slug",
       options: {
-        source: "name",
+        source: "username",
         maxLength: 96,
       },
     }),
     defineField({
-      name: "image",
-      title: "Image",
+      name: "avatar",
+      title: "Avatar",
       type: "image",
       options: {
         hotspot: true,
@@ -43,8 +43,8 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: "name",
-      media: "image",
+      title: "username",
+      media: "avatar",
     },
   },
 });
