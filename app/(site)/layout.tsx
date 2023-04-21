@@ -1,6 +1,6 @@
 import "../globals.css";
 import { getPages } from "@/sanity/sanity-utils";
-import Navbar from "../../components/Navbar";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Next Magazine Starter",
