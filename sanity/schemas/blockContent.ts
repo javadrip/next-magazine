@@ -44,12 +44,6 @@ export default defineType({
           { title: "Underline", value: "underline" },
           { title: "Strike", value: "strike-through" },
           { title: "Code", value: "code" },
-          {
-            title: "Highlight",
-            value: "highlight",
-          },
-          { title: "Subscript", value: "subscript" },
-          { title: "Superscript", value: "superscript" },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -63,8 +57,29 @@ export default defineType({
                 name: "href",
                 type: "url",
               },
+              // {
+              //   // TODO: Add component to open links in new tab: https://www.sanity.io/guides/portable-text-internal-and-external-links#b14f77c2e796
+              //   title: "Open in new tab",
+              //   name: "blank",
+              //   type: "boolean",
+              //   description: "Read https://css-tricks.com/use-target_blank/",
+              // },
             ],
           },
+          // {
+          //   // TODO: Add icon for internal link, and render links: https://www.sanity.io/guides/portable-text-internal-and-external-links#b14f77c2e796
+          //   name: "internalLink",
+          //   type: "object",
+          //   title: "Internal link",
+          //   fields: [
+          //     {
+          //       name: "reference",
+          //       type: "reference",
+          //       title: "Reference",
+          //       to: [{ type: "post" }],
+          //     },
+          //   ],
+          // },
         ],
       },
     }),
@@ -75,5 +90,10 @@ export default defineType({
       type: "image",
       options: { hotspot: true },
     }),
+    // TODO: Add code block: https://www.sanity.io/docs/portable-text-editor-configuration
+    // defineArrayMember({
+    //   type: "code",
+    // }),
+    // TODO: Add YouTube! https://www.sanity.io/guides/portable-text-how-to-add-a-custom-youtube-embed-block
   ],
 });
