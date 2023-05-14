@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "post",
-  title: "Blog Posts",
+  title: "Posts",
   type: "document",
   fields: [
     defineField({
@@ -27,7 +27,7 @@ export default defineType({
       to: { type: "author" },
     }),
     defineField({
-      name: "mainImage",
+      name: "featuredImage",
       title: "Featured image",
       type: "image",
       options: {
@@ -47,8 +47,8 @@ export default defineType({
       type: "datetime",
     }),
     defineField({
-      name: "body",
-      title: "Body",
+      name: "content",
+      title: "Content",
       // type: blockContent comes from sanity/schemas/blockContent.ts
       type: "blockContent",
     }),
@@ -58,7 +58,7 @@ export default defineType({
     select: {
       title: "title",
       author: "author.name",
-      media: "mainImage",
+      media: "featuredImage",
     },
     prepare(selection) {
       const { author } = selection;

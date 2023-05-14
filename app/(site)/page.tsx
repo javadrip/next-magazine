@@ -10,10 +10,6 @@ export default async function Home() {
     <div>
       <Hero />
 
-      <p className="mt-3 text-xl text-gray-600">
-        Aloha everyone! Check out my projects!
-      </p>
-
       <h2 className="mt-24 font-bold text-gray-700 text-3xl">My Projects</h2>
       {/* projects and project are all typed correctly here */}
       <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
