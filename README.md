@@ -22,7 +22,9 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ### Sanity Studio
 
-Access Sanity Studio with this URL: http://localhost:3000/admin
+Since Sanity Studio has been embedded into the app, there's no need to start a development server, build static bundle and preview production build on [localhost:3333](http://localhost:3333).
+
+Simply access Sanity Studio with this URL: [http://localhost:3000/admin](http://localhost:3000/admin)
 
 ### Production Build
 After finishing all the customization, you can create a production build by running this command.
