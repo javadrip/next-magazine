@@ -10,6 +10,7 @@ export type Post = {
   slug: string;
   author: string;
   featuredImage: string;
+  alt: string;
   categories: string[];
   publishedAt: Date;
 

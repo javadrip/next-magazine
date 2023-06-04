@@ -1,5 +1,6 @@
 import "../globals.css";
 import { getPages } from "@/sanity/sanity-utils";
+import { livvic, assistant } from "../../public/fonts";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
@@ -17,10 +18,10 @@ export default async function RootLayout({
   const pages = await getPages();
 
   return (
-    <html lang="en">
-      <body className="max-w-3xl mx-auto py-10">
+    <html lang="en" className={`${livvic.variable} ${assistant.variable}`}>
+      <body id="home">
         <Navbar />
-        <main className="py-20">{children}</main>
+        <main className="max-w-3xl mx-auto p-2 mt-10">{children}</main>
       </body>
     </html>
   );

@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-colour {
+  @apply from-orange-500 via-purple-500 to-blue-600;
+}
+
+.h-screen-ex-navbar {
+  @apply h-screen;
+  height: calc(100vh - 5rem);
+}
+
+.navbar-button-colour {
+  @apply from-orange-500 via-purple-500 to-blue-600;
+  @apply rounded;
+}
+
+.navbar-link:hover {
+  @apply text-white;
+  background: linear-gradient(to right, var(--tw-gradient-stops));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition: 300ms;
+}
+
+.navbar-link {
+  background-position: center;
+  background-size: 100% 4px;
+  padding: 0px 4px;
+}
+
+.box-shadow-solid:hover {
+  box-shadow: -4px 4px 0 0 #172554;
+}
+
+@layer base {
+  html {
+    @apply text-slate-700;
+  }
+
+  h2 {
+    @apply my-4;
+  }
+
+  h3 {
+    @apply font-livvic text-2xl font-semibold text-slate-600;
+  }
+
+  h4 {
+    @apply font-livvic text-xl font-semibold text-slate-600 mt-4 mb-2;
+  }
+
+  p,
+  li {
+    @apply font-assistant font-medium text-lg;
+  }
+
+  li {
+    @apply list-disc ml-6;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  hr {
+    @apply my-4;
+  }
+}

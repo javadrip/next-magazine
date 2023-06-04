@@ -32,6 +32,27 @@ export async function getPosts(): Promise<Post[]> {
 }
 
 // Used to display the content of a single post page
+export async function getPost(slug: string): Promise<Post> {
+  // clientConfig is imported from sanity/config/client-config.ts
+  return createClient(clientConfig).fetch(
+    // * grabs everything in the dataset
+    // [] filters down the data
+    // {} specifies the projection aka the data we want to see
+    // The query still returns an array, so we need to grab the first element, hence the [0]
+    groq`*[_type == "post" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      name,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url,
+      content
+    }`,
+    // Short hand for { slug: slug }
+    // slug value is taken from the getPost parameter slug
+    { slug }
+  );
+}
 
 // ==================== PROJECTS ==================== //
 
