@@ -42,10 +42,12 @@ export async function getPost(slug: string): Promise<Post> {
     groq`*[_type == "post" && slug.current == $slug][0]{
       _id,
       _createdAt,
-      name,
+      title,
       "slug": slug.current,
-      "image": image.asset->url,
-      url,
+      "author": author->username,
+      "featuredImage": featuredImage.asset->url,
+      "categories": categories[]->title,
+      publishedAt,
       content
     }`,
     // Short hand for { slug: slug }
