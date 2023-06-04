@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
+import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
 
 const config = defineConfig({
@@ -11,7 +12,7 @@ const config = defineConfig({
   // The URL where we want to deploy our Sanity Studio. Need to correnspond to folder name in app folder.
   basePath: "/admin",
   // deskTool is needed to view Sanity Studio
-  plugins: [deskTool()],
+  plugins: [deskTool(), visionTool()],
   schema: {
     types: schemaTypes,
   },
