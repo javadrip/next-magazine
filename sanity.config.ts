@@ -1,6 +1,6 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
-import { visionTool } from "@sanity/vision";
+import { visionTool } from "./node_modules/@sanity/vision/lib/dts/src/index";
 import { schemaTypes } from "./sanity/schemas";
 
 const config = defineConfig({
